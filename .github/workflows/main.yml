@@ -17,5 +17,5 @@ jobs:
           git config --local user.email "sardarsadiq106@gmail.com"
           git config --local user.name "Sardar-Sadiq"
           git add .
-          git commit -m "Automated daily commit"
+          git commit -m "commit"
           git push
