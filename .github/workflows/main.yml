@@ -19,12 +19,12 @@ jobs:
           git config --local user.email "sardarsadiq106@gmail.com"
           git config --local user.name "Sardar-Sadiq"
 
-      - name: Pull latest changes
+      - name: Pull latest changes with rebase
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's default token
         run: |
           git fetch origin
-          git reset --hard origin/master  # Resets the local branch to match remote
+          git rebase origin/master  # Rebase your local changes on top of remote
 
       - name: Commit changes
         run: |
