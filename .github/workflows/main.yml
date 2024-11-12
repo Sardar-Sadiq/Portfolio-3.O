@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's default token
         run: |
           git fetch origin
-          git reset --hard origin/master  # Resets your local branch to match the remote
+          git reset --hard origin/master  # Resets the local branch to match remote
 
       - name: Commit changes
         run: |
