@@ -23,7 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's default token
         run: |
-          git pull origin master --rebase
+          git fetch origin
+          git reset --hard origin/master  # Resets your local branch to match the remote
 
       - name: Commit changes
         run: |
