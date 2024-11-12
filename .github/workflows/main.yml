@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3  # Updated to v3 for Node.js compatibility
+        uses: actions/checkout@v3
 
       - name: Make a small change
         run: echo "$(date)" >> daily-log.txt
@@ -18,6 +18,12 @@ jobs:
         run: |
           git config --local user.email "sardarsadiq106@gmail.com"
           git config --local user.name "Sardar-Sadiq"
+
+      - name: Pull latest changes
+        env:
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git pull https://$PAT_TOKEN@github.com/Sardar-Sadiq/Portfolio-3.O.git master --rebase
 
       - name: Commit changes
         run: |
