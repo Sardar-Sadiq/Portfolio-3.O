@@ -28,4 +28,5 @@ jobs:
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git push https://$PAT_TOKEN@github.com/Sardar-Sadiq/Portfolio-3.0.git HEAD:master
+          git remote set-url origin https://Sardar-Sadiq:${PAT_TOKEN}@github.com/Sardar-Sadiq/Portfolio-3.O.git
+          git push origin HEAD:master
