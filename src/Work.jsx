@@ -59,7 +59,6 @@ const projects = [
   }
 ];
 
-
 const Work = () => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -88,11 +87,9 @@ const Work = () => {
 
   const handleMouseMove = (e) => {
     if (e.touches) {
-      // For touch events
       const touch = e.touches[0];
       scrollSidebar(touch.clientY);
     } else {
-      // For mouse events
       scrollSidebar(e.clientY);
     }
   };
@@ -105,61 +102,66 @@ const Work = () => {
     sidebar.scrollTop = scrollPosition;
   };
 
-  return (
-    <div className="flex flex-col md:flex-row bg-[black] text-white h-screen">
-      {/* Main Content - Fixed Section */}
-      <div className="flex-1 pt-[100px] px-4 md:px-8 h-screen md:h-auto md:sticky top-0">
-        <div ref={mainContentRef}>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">
-            {selectedProject.title}
-          </h1>
-          <p className="text-base md:text-lg mb-6 text-center md:text-left">
-            {selectedProject.description}
-          </p>
-          <div className="overflow-hidden rounded-lg">
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.title}
-              className="w-full md:w-[80vw] h-[40vh] md:h-[70vh] object-cover object-center rounded-lg"
-            />
+  if (isMobile) {
+    // Mobile layout
+    return (
+     <>
+     <div className="flex flex-row bg-black text-white h-screen">
+        
+     </div>
+     </> 
+
+        
+    )
+  } else {
+    // Desktop layout
+    return (
+      <div className="flex flex-row bg-[black] text-white h-screen">
+        <div className="flex-1 pt-[100px] px-8 h-auto sticky top-0">
+          <div ref={mainContentRef}>
+            <h1 className="text-4xl font-bold mb-4">
+              {selectedProject.title}
+            </h1>
+            <p className="text-lg mb-6">
+              {selectedProject.description}
+            </p>
+            <div className="overflow-hidden rounded-lg">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-[70vh] object-cover rounded-lg"
+              />
+            </div>
           </div>
         </div>
+
+        <div
+          ref={sidebarRef}
+          className="w-24 h-screen overflow-y-scroll flex flex-col items-start pt-[80px] space-y-3 scrollbar-hidden"
+          onMouseMove={handleMouseMove}
+          onTouchMove={handleMouseMove}
+        >
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              onClick={() => handleProjectSelect(project)}
+              className={`cursor-pointer transition-all duration-300 ${
+                selectedProject.id === project.id ? "opacity-100" : "opacity-70 hover:opacity-100"
+              }`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`w-20 h-32 object-cover transition-opacity duration-300 ${
+                  selectedProject.id !== project.id ? "bg-black opacity-50" : ""
+                }`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* Sidebar with Hover and Touch Scroll */}
-      <div
-  ref={sidebarRef}
-  className={`w-full md:w-24 h-[20vh] md:h-screen overflow-y-scroll flex md:flex-col flex-row items-center md:items-start md:pt-[80px] space-x-3 md:space-x-0 space-y-0 md:space-y-3 scrollbar-hidden mt-4 md:mt-0 ${
-    isMobile
-      ? "fixed bottom-0 left-0 right-0 bg-black bg-opacity-80 overflow-x-scroll"
-      : ""
-  }`}
-  onMouseMove={handleMouseMove}
-  onTouchMove={handleMouseMove}
->
-  {projects.map((project) => (
-    <div
-      key={project.id}
-      onClick={() => handleProjectSelect(project)}
-      className={`cursor-pointer transition-all duration-300 ${
-        selectedProject.id === project.id
-          ? "opacity-100 "
-          : "opacity-70 hover:opacity-100"
-      }`}
-    >
-      <img
-        src={project.image}
-        alt={project.title}
-        className={`w-10 md:w-20 h-20 md:h-32 object-cover transition-opacity duration-300 ${
-          selectedProject.id !== project.id ? "bg-black opacity-50" : ""
-        }`}
-      />
-    </div>
-  ))}
-</div>
-
-    </div>
-  );
+    );
+  }
 };
 
 export default Work;
