@@ -17,7 +17,7 @@ const Preloader = ({ onFinish }) => {
   }, [onFinish]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-[#000000] z-50">
       <img
         src={luffygif}
         alt="luffygif"

@@ -1,0 +1,102 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom Styles */
+:root { 
+  font-size: 16px; 
+}
+
+@media (max-width: 500px) { 
+  :root { 
+    font-size: 14px; 
+  } 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #87cd33;
+  color: white;
+}
+
+body {
+  overflow-x: hidden;  /* Prevent horizontal overflow */
+  background-color: #000000; /* Dark background */
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 2rem; }
+
+img {
+  width: 100%;
+  height: auto;
+  background: #f0f0f0;
+  object-fit: cover;  /* Ensure images fill the container */
+}
+
+ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+li {
+  flex-shrink: 0;
+  width: clamp(500px, 60vw, 800px);
+  padding-right: 1rem;
+}
+
+header { height: 100vh; }
+footer { height: 50vh; }
+
+.any-link { 
+  color: #4e9815; 
+}
+
+.df { display: flex; }
+.aic { align-items: center; }
+.jcc { justify-content: center; }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-wrapper {
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  position: relative; /* Enable z-index for overlay */
+  align-items: center; /* Vertically center content */
+}
+
+.demo-gallery:not(.last) {
+  padding-bottom: 1rem;
+}
+
+.demo-text .text {
+  font-size: clamp(3rem, 8vw, 10rem); /* Adjust text size responsively */
+  line-height: 1;
+  font-weight: 900;
+  z-index: 10;
+  position: absolute; /* Position text over the images */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center text */
+  color: white;
+}
