@@ -184,7 +184,7 @@ const Work = () => {
     return (
       <div className="bg-black text-white min-h-screen  px-4 py-8">
         <header className="text-center pb-6">
-          <h1 className="text-4xl font-bold mt-10 uppercase">Our Projects</h1>
+          <h1 className="text-4xl font-bold mt-10 uppercase">My Projects</h1>
         </header>
         <div className="grid grid-cols-1 gap-6">
           {projects.map((project, index) => (
@@ -212,16 +212,19 @@ const Work = () => {
     // Desktop layout
     return (
       <div className="flex flex-row bg-black text-white h-screen">
+        
         {/* Left Main Content */}
-        <div className="flex-1 pt-24 px-8 h-auto  sticky top-0">
+        <div className="flex-1 pt-24 px-8   sticky top-0">
+        <h1 className="text-[4rem] font bold">My Projects</h1>
           <div ref={mainContentRef}>
+            
             <h1 className="text-4xl font-bold mb-4">{selectedProject.title}</h1>
             <p className="text-lg mb-6">{selectedProject.description}</p>
             <div className="overflow-hidden rounded-lg relative group">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-[70vh] object-cover rounded-lg"
+                className="w-full h-[60vh] object-cover rounded-lg"
               />
               {/* Hover Layer */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-end justify-end transition duration-300 p-4">
