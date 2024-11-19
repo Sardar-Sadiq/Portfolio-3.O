@@ -83,7 +83,7 @@ const Menu = () => {
           <div className="menu-logo">
             <Link to="/" className=" dota  ">
             <button className="relative overflow-hidden  py-1 px-auto dota   transition duration-300 group z-40">
-              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] ">
+              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] hover:bg-red-100 ">
                 +_+
               </span>
               <span className="absolute top-0 left-0 w-full h-full flex dota text-[30px] items-center justify-center  transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
