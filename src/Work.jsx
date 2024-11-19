@@ -254,13 +254,16 @@ const Work = () => {
       <div className="flex flex-row bg-black text-white h-screen">
         
         {/* Left Main Content */}
-        <div className="flex-1 pt-24 px-8 pl-[100px]  sticky top-0">
+        <div className="flex w-[33%]  items-center justify-center ">
         <h1 className=" doto-round">My Projects</h1>
+        </div>
+        <div className="flex-1 px-4 pl-[100px] border-l-[0.1px] border-[#f1f1da3a] w-auto sticky h-full top-0 pt-[200px]">
+        
           <div ref={mainContentRef}>
             
             <h1 className="text-4xl font-bold mb-4">{selectedProject.title}</h1>
             <p className="text-lg mb-6">{selectedProject.description}</p>
-            <div className="overflow-hidden rounded-lg relative group w-[50%]">
+            <div className="overflow-hidden rounded-lg relative group w-[800px] ">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -298,7 +301,7 @@ const Work = () => {
         {/* Right Sidebar */}
         <div
           ref={sidebarRef}
-          className="w-24 h-screen overflow-y-scroll flex flex-col items-center pt-16 space-y-3 scrollbar-hidden"
+          className="w-[7rem] h-screen overflow-y-scroll flex flex-col items-center  pt-16 space-y-3 scrollbar-hidden"
           onMouseMove={handleMouseMove}
           onTouchMove={handleMouseMove}
         >
