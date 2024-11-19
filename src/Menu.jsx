@@ -86,7 +86,7 @@ const Menu = () => {
               <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] ">
                 +_+
               </span>
-              <span className="absolute top-0 left-0 w-full h-full flex dota text-[30px]  items-center justify-center  transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+              <span className="absolute top-0 left-0 w-full h-full flex dota text-[30px] items-center justify-center  transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                 +_+
               </span>
             </button>
