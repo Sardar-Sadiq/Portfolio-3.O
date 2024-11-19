@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
+
 @font-face {
     font-family: MangoGrotesque ;
     src: url(./assets/MangoGrotesque-Light.ttf);
@@ -17,7 +20,44 @@
     mix-blend-mode: difference;
     
 }
- 
+
+.doto{
+  font-family: "Doto", sans-serif;
+  font-optical-sizing:auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 2;
+}
+
+.doto-round {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 5;
+    font-size: 4rem; 
+    color: white; 
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
+                 0 0 10px rgba(255, 255, 255, 0.6), 
+                 0 0 20px rgba(255, 255, 255, 0.4);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
+                 0 0 10px rgba(255, 255, 255, 0.6), 
+                 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 
+                 0 0 20px rgba(255, 255, 255, 0.7), 
+                 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+}
+
 
 .contact-p{
     font-family:  MangoGrotesque ;
@@ -70,3 +110,5 @@
       transform: rotate(0deg);
     }
   }
+
+

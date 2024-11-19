@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom"; // Use Link for navigation
 import { gsap } from "gsap";
-
 import "./font.css"
+
+
 const menuLinks = [
   { label: "Home" , path: "/" },
   { label: "About", path: "/about" },
@@ -53,19 +54,19 @@ const Menu = () => {
       <div className="menu-bar fixed top-0 left-0 w-screen py-3 px-[30px] md:px-[100px] flex justify-between items-center rounded-[1rem]  z-20">
         <div className="menu-logo">
           <Link to="/" className="text-[#ffffffff] text-[30px]  ">
-            <button className="relative overflow-hidden  py-1 px-auto text-lg font-medium  transition duration-300 group z-40">
-              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] contact-m">
-                SARDAR
+            <button className="relative overflow-hidden  py-1 px-auto dota   transition duration-300 group z-40">
+              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] ">
+                +_+
               </span>
-              <span className="absolute top-0 left-0 w-full h-full flex text-[30px] items-center justify-center contact-m transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                SARDAR
+              <span className="absolute top-0 left-0 w-full h-full flex text-[30px] items-center justify-center  transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                +_+
               </span>
             </button>
           </Link>
         </div>
         <div className="menu-open cursor-pointer" onClick={toggleMenu}>
         
-          <button className="relative overflow-hidden  py-1 px-auto text-lg font-medium  transition duration-300 group text-[#ffffffff] uppercase  text-[30px] contact-m z-40">
+          <button className="relative overflow-hidden  py-1 px-auto text-lg dota  transition duration-300 group text-[#ffffffff] uppercase  text-[30px] contact-m z-40">
               <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] contact-m">
                 MENU
               </span>
@@ -80,19 +81,19 @@ const Menu = () => {
       <div className="menu-overlay fixed top-0 left-0 w-screen h-screen py-3 px-[30px] md:px-[100px] bg-[#C63C51] z-20 flex flex-col justify-between clip-path-polygon-0-0-100-0-100-0-0-0 ">
         <div className="menu-overlay-bar w-full flex justify-between items-center ">
           <div className="menu-logo">
-            <Link to="/" className="text-[30px] contact-m  ">
-            <button className="relative overflow-hidden  py-1 px-auto text-lg font-medium  transition duration-300 group z-40">
-              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] contact-m">
-                SARDAR
+            <Link to="/" className=" dota  ">
+            <button className="relative overflow-hidden  py-1 px-auto dota   transition duration-300 group z-40">
+              <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] ">
+                +_+
               </span>
-              <span className="absolute top-0 left-0 w-full h-full flex text-[30px] items-center justify-center contact-m transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-                SARDAR
+              <span className="absolute top-0 left-0 w-full h-full flex dota text-[30px]  items-center justify-center  transform translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                +_+
               </span>
             </button>
             </Link>
           </div>
           <div className="menu-close cursor-pointer" onClick={toggleMenu}>
-          <button className="relative overflow-hidden  py-1 px-auto text-lg font-medium  transition duration-300 group text-black hover:text-[#ffffffff] uppercase  text-[30px] contact-m z-40">
+          <button className="relative overflow-hidden  py-1 px-auto dota  transition duration-300 group text-black hover:text-[#ffffffff] uppercase  text-[30px] contact-m z-40">
               <span className="block transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-full text-[30px] contact-m">
                 MENU
               </span>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./work.css";
-
+import "./font.css";
 const projects = [
   {
     id: 1,
@@ -10,6 +10,10 @@ const projects = [
       "A sleek and responsive portfolio website for professionals to showcase their work and skills.",
     image:
       "https://images.unsplash.com/photo-1550642952-78f8caa0d4b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+    aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 2,
@@ -18,6 +22,10 @@ const projects = [
       "An eco-friendly travel guide to help users discover sustainable destinations and green accommodations.",
     image:
       "https://images.unsplash.com/photo-1565685818459-66c969b9f257?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 3,
@@ -26,6 +34,10 @@ const projects = [
       "A dynamic recipe-sharing platform for food enthusiasts to share and discover culinary delights.",
     image:
       "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 4,
@@ -34,6 +46,10 @@ const projects = [
       "An event management app with a user-friendly interface for organizing and discovering local events.",
     image:
       "https://images.unsplash.com/photo-1565120130296-d8f681b15b2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 5,
@@ -42,6 +58,10 @@ const projects = [
       "A modern fitness tracker with workout plans, meal tracking, and progress analytics for users.",
     image:
       "https://images.unsplash.com/photo-1599058917215-396dc6d2d7b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 6,
@@ -50,6 +70,10 @@ const projects = [
       "A crypto portfolio tracker with real-time updates, analysis, and educational resources.",
     image:
       "https://images.unsplash.com/photo-1635790109074-8a8220a0b27e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 7,
@@ -58,6 +82,10 @@ const projects = [
       "A community-driven platform for artists to showcase their work, connect, and sell their creations.",
     image:
       "https://images.unsplash.com/photo-1600552039621-0f6410f5c3f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 8,
@@ -66,6 +94,10 @@ const projects = [
       "An e-learning platform that connects students and tutors through interactive virtual classes.",
     image:
       "https://images.unsplash.com/photo-1584697964190-820a57ed1f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 9,
@@ -74,6 +106,10 @@ const projects = [
       "A blog-driven travel website featuring offbeat destinations, tips, and itineraries.",
     image:
       "https://images.unsplash.com/photo-1523301343968-6a6f7f7e8aaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
   {
     id: 10,
@@ -82,6 +118,10 @@ const projects = [
       "A gaming portal with reviews, forums, and the latest news about trending games and consoles.",
     image:
       "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+      aboutproject:
+      "loremanjasnjavnajkvnjkvnjvndjvnasvksajvwamvnsdjvmkcncdavdsvhjsdnvcbddawshvnklbjksdvmdcsjbajvsnd  jajfjaefn awjjawfjajf ",
+      skills: "html,css,js,reactjs,tailwindcss",
+      github_link:"#",
   },
 ];
 
@@ -184,7 +224,7 @@ const Work = () => {
     return (
       <div className="bg-black text-white min-h-screen  px-4 py-8">
         <header className="text-center pb-6">
-          <h1 className="text-4xl font-bold mt-10 uppercase">My Projects</h1>
+          <h1 className="text-4xl  mt-10  doto-round">My Projects</h1>
         </header>
         <div className="grid grid-cols-1 gap-6">
           {projects.map((project, index) => (
@@ -214,17 +254,17 @@ const Work = () => {
       <div className="flex flex-row bg-black text-white h-screen">
         
         {/* Left Main Content */}
-        <div className="flex-1 pt-24 px-8   sticky top-0">
-        <h1 className="text-[4rem] font bold">My Projects</h1>
+        <div className="flex-1 pt-24 px-8 pl-[100px]  sticky top-0">
+        <h1 className=" doto-round">My Projects</h1>
           <div ref={mainContentRef}>
             
             <h1 className="text-4xl font-bold mb-4">{selectedProject.title}</h1>
             <p className="text-lg mb-6">{selectedProject.description}</p>
-            <div className="overflow-hidden rounded-lg relative group">
+            <div className="overflow-hidden rounded-lg relative group w-[50%]">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-[60vh] object-cover rounded-lg"
+                className="w-full  h-[60vh] object-cover rounded-lg"
               />
               {/* Hover Layer */}
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-end justify-end transition duration-300 p-4">
@@ -250,6 +290,7 @@ const Work = () => {
                   </svg>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
