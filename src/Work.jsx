@@ -290,7 +290,7 @@ const Work = () => {
                   </svg>
                 </div>
               </div>
-              
+             
             </div>
           </div>
         </div>
@@ -316,7 +316,7 @@ const Work = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className={`w-20 h-32 object-cover transition-opacity duration-300 ${
+                className={`w-20 h-32 object-cover transition-opacity duration-300 rounded-[2px] ${
                   selectedProject.id !== project.id ? "bg-black opacity-50" : ""
                 }`}
               />
