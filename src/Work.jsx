@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./work.css";
 import "./font.css";
+import Myproject from "./Myproject";
 const projects = [
   {
     id: 1,
@@ -255,14 +256,14 @@ const Work = () => {
         
         {/* Left Main Content */}
         <div className="flex w-[33%]  items-center justify-center ">
-        <h1 className=" doto-round">My Projects</h1>
+        <Myproject/>
         </div>
-        <div className="flex-1 px-4 pl-[100px] border-l-[0.1px] border-[#f1f1da3a] w-auto sticky h-full top-0 pt-[200px]">
+        <div className="flex-1 px-4 pl-[100px] border-l-[0.1px] border-[#6868683a] w-auto sticky h-full top-0 pt-[150px]">
         
           <div ref={mainContentRef}>
             
             <h1 className="text-4xl font-bold mb-4">{selectedProject.title}</h1>
-            <p className="text-lg mb-6">{selectedProject.description}</p>
+            <p className="text-lg mb-6 w-auto">{selectedProject.description}</p>
             <div className="overflow-hidden rounded-lg relative group w-[800px] ">
               <img
                 src={selectedProject.image}
