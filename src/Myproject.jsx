@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./Myproject.css"; // Add the CSS styles here
+import "./Myproject.css";
 
 const Myproject = () => {
-  const text = "My Projects"; // The text to display
+  const text = "MY PROJECTS"; // The text to display
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % text.length); // Move to the next pixel
-    }, 300); // Adjust the speed (in ms)
+      setActiveIndex((prevIndex) => (prevIndex + 1) % text.length); // Loop over text characters
+    }, 300); // Adjust the speed of the glow
     return () => clearInterval(interval); // Cleanup the interval on unmount
   }, [text.length]);
 
@@ -28,3 +28,26 @@ const Myproject = () => {
 };
 
 export default Myproject;
+
+
+
+
+//whole animation text
+// import React from "react";
+// import "./Myproject.css";
+
+// const Myproject = () => {
+//   const text = "MY PROJECTS"; 
+
+//   return (
+//     <h1 className="doto-round">
+//       {text.split("").map((char, index) => (
+//         <span key={index} style={{ visibility: char === " " ? "hidden" : "visible" }}>
+//           {char}
+//         </span>
+//       ))}
+//     </h1>
+//   );
+// };
+
+// export default Myproject;

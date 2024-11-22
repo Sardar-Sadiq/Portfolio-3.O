@@ -9,20 +9,70 @@
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
                0 0 10px rgba(255, 255, 255, 0.6),
                0 0 20px rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px 0;
 }
 
 .doto-round span {
   display: inline-block;
   color: white;
+  opacity: 0.5; /* Dim inactive characters */
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
                0 0 10px rgba(255, 255, 255, 0.6),
                0 0 20px rgba(255, 255, 255, 0.4);
-  opacity: 0.5;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; /* Smooth transition for glow effect */
 }
 
 .doto-round span.active {
-  color: #00ff00; /* Bright green pixel */
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-  opacity: 1;
+  opacity: 1; /* Brighten active characters */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+               0 0 20px rgba(255, 255, 255, 0.9),
+               0 0 30px rgba(255, 255, 255, 0.8);
 }
+
+
+/* 
+  whole text animation
+.doto-round {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "ROND" 5;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(255, 255, 255, 0.6),
+               0 0 20px rgba(255, 255, 255, 0.4);
+  animation: glow-loop 2s infinite; 
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.doto-round span {
+  display: inline-block;
+}
+
+
+@keyframes glow-loop {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+                 0 0 10px rgba(255, 255, 255, 0.6),
+                 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+                 0 0 20px rgba(255, 255, 255, 0.9),
+                 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+}
+
+ */
+
+
+
+
