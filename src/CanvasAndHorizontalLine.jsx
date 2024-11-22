@@ -7,6 +7,7 @@ import Horizontal_line from "./Horizontal_line";
 import ContactSection from "./ContactSection";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import "./CanvasAndHorizontalLine.css"; // Import CSS for optimizations
+import RevealText from "./RevealText";
 
 
 const CanvasAndHorizontalLine = () => {
@@ -48,6 +49,7 @@ const CanvasAndHorizontalLine = () => {
         </Suspense>
       </Canvas>
       <Horizontal_line />
+      <RevealText/>
       <ContactSection />
     </div>
   );
