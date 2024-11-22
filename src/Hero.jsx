@@ -1,69 +1,78 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import imagesLoaded from 'imagesloaded';
-import './Hero.css';  // Import Tailwind styles and custom styles if needed
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    // GSAP Scroll Animation
+    gsap.utils.toArray("section").forEach((section, index) => {
+      const wrapper = section.querySelector(".wrapper");
+      const [x, xEnd] =
+        index % 2
+          ? ["100%", (wrapper.scrollWidth - section.offsetWidth) * -1]
+          : [wrapper.scrollWidth * -1, 0];
 
-    const images = document.querySelectorAll('img');
-    
-    const showDemo = () => {
-      document.body.style.overflow = 'auto';
-      document.scrollingElement.scrollTo(0, 0);
-
-      document.querySelectorAll('section').forEach((section, index) => {
-        const w = section.querySelector('.wrapper');
-        const [x, xEnd] = index % 2 === 0 ? ['100%', (w.scrollWidth - section.offsetWidth) * -1] : [w.scrollWidth * -1, 0];
-        
-        gsap.fromTo(w, { x }, {
+      gsap.fromTo(
+        wrapper,
+        { x },
+        {
           x: xEnd,
           scrollTrigger: {
             trigger: section,
-            start: "top top", // Start when the top of the section hits the top of the viewport
-            end: "bottom top", // End when the bottom of the section reaches the top of the viewport
-            scrub: 0.5,
-            pin: true,  // Pin section during animation
+            scrub: 1,
           },
-        });
-      });
-    };
-
-    imagesLoaded(images).on('always', showDemo);
+        }
+      );
+    });
   }, []);
 
   return (
-    <div className="bg-black text-white">
-      <section className="demo-text">
-        <div className="wrapper text flex items-center justify-center text-4xl font-extrabold">
-          Development Designing
-        </div>
-      </section>
-
-      {[...Array(4)].map((_, i) => (
-        <section className="demo-gallery" key={i}>
-          <ul className="wrapper flex">
-            {[...Array(Math.floor(Math.random() * 3) + 3)].map((_, j) => (
-              <li key={j}>
-                <img
-                  src={`https://source.unsplash.com/random/300x300?sig=${Math.floor(Math.random() * 206)}`}
-                  alt={`Random ${j}`}
-                  width={300}
-                  height={300}
-                />
-              </li>
-            ))}
-          </ul>
+    <div className="relative overflow-hidden bg-black text-white">
+      {/* Main Content */}
+      <div className="demo-wrapper overflow-x-hidden">
+        {/* First Demo Text */}
+        <section className="demo-text py-12">
+          <div className="wrapper text-5xl md:text-6xl font-extrabold text-center text-white">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+          </div>
         </section>
-      ))}
 
-      <section className="demo-text">
-        <div className="wrapper text flex items-center justify-center text-4xl font-extrabold">
-          Development Designing
-        </div>
-      </section>
+        {/* Demo Gallery Section */}
+        {[...Array(4)].map((_, index) => (
+          <section
+            key={index}
+            className="demo-gallery pb-8 bg-black text-white"
+          >
+            <ul className="wrapper flex flex-wrap justify-center">
+              {[...Array(Math.floor(Math.random() * 2) + 3)].map(
+                (_, imgIndex) => (
+                  <li
+                    key={imgIndex}
+                    className="flex-shrink-0 w-[clamp(500px,60vw,800px)] p-4"
+                  >
+                    <img
+                      src={`https://source.unsplash.com/random/1240x874?sig=${Math.floor(
+                        Math.random() * 206
+                      )}`}
+                      alt="Random Unsplash"
+                      className="w-full h-auto bg-gray-800"
+                    />
+                  </li>
+                )
+              )}
+            </ul>
+          </section>
+        ))}
+
+        {/* Second Demo Text */}
+        <section className="demo-text py-12">
+          <div className="wrapper text-5xl md:text-6xl font-extrabold text-center text-white">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

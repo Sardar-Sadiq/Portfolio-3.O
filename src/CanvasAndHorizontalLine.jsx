@@ -49,7 +49,7 @@ const CanvasAndHorizontalLine = () => {
         </Suspense>
       </Canvas>
       <Horizontal_line />
-    
+      
       <ContactSection />
     </div>
   );
