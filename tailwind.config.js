@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       animation: {
         scroll: 'scroll 10s linear infinite',
         bounce: 'bounce 2s infinite',
