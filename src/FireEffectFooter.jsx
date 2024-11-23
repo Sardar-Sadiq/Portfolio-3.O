@@ -61,7 +61,7 @@ const FireEffectFooter = () => {
       <pre
         id="fire"
         style={{
-          color: "#FF9900", //add the white color if needed
+          color: "#FFFFFF", //add the white color if needed
           margin: 0,
           padding: 0,
           fontSize: "14px", // Adjusted font size to scale with reduced height
