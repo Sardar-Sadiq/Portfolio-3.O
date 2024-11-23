@@ -50,18 +50,17 @@ const FireEffectFooter = () => {
 
   return (
     <div
+      className="fire-effect-container"
       style={{
         width: "auto",
         height: "auto",
-        margin: 0,
-        padding: 0,
         position: "relative",
       }}
     >
       <pre
         id="fire"
         style={{
-          color: "#FFFFFF", //add the white color if needed
+          color: "#FFFFFF", // Fire text color
           margin: 0,
           padding: 0,
           fontSize: "14px", // Adjusted font size to scale with reduced height
@@ -73,6 +72,17 @@ const FireEffectFooter = () => {
       >
         {fireString}
       </pre>
+
+      {/* Add CSS for responsive visibility */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .fire-effect-container {
+              display: none; /* Hide component on smaller screens */
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
