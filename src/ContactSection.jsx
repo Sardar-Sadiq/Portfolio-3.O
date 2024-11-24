@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import FireEffectFooter from "./FireEffectFooter"; // Import the FireEffectFooter component
 import "./font.css";
 
+
 const ContactSection = () => {
   // Animation controls for Framer Motion
   const headerControls = useAnimation();
@@ -88,6 +89,7 @@ const ContactSection = () => {
           {/* FireEffectFooter */}
           <div className="absolute bottom-0 left-10 w-full">
             <FireEffectFooter  />
+            
           </div>
         </motion.div>
 
