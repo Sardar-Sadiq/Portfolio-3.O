@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import CanvasAndHorizontalLine from "./CanvasAndHorizontalLine";
@@ -8,7 +7,8 @@ import Menu from "./Menu";
 import Home from "./Home";
 import Work from "./Work";
 import ContactSection from "./ContactSection";
-import Preloader from './Preloader';
+import Preloader from "./Preloader";
+import CustomCursor from "./CustomCursor"; // Import your CustomCursor
 
 const App = () => {
   const location = useLocation();
@@ -17,11 +17,13 @@ const App = () => {
   // Function to handle finishing the preloader animation
   const handlePreloaderFinish = () => {
     setLoading(false);
-  }
+  };
 
   return (
     <>
-    
+      {/* Render the custom cursor for the entire application */}
+      <CustomCursor />
+
       {/* Menu is always rendered */}
       <Menu />
 
@@ -38,7 +40,6 @@ const App = () => {
 
       {/* Conditionally render the Preloader */}
       {loading && <Preloader onFinish={handlePreloaderFinish} />}
-      
     </>
   );
 };

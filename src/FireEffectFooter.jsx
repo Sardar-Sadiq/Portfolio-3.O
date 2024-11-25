@@ -69,6 +69,7 @@ const FireEffectFooter = () => {
           bottom: 0,
           borderRadius: "3rem",
         }}
+        
       >
         {fireString}
       </pre>
