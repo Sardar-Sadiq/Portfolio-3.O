@@ -26,6 +26,7 @@
     "gsap": "^3.12.5",
     "haml": "^0.4.3",
     "imagesloaded": "^5.0.0",
+    "magic-ui": "^0.1.0",
     "mini-svg-data-uri": "^1.4.4",
     "oxy-ui": "^3.0.3",
     "react": "^18.3.1",
